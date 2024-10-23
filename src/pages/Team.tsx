@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Linkedin, Mail } from 'lucide-react';
+import henryImg from '../assets/henry.jpeg';
 
 const Team: React.FC = () => {
   const fadeIn = useSpring({
@@ -11,39 +12,39 @@ const Team: React.FC = () => {
 
   const teamMembers = [
     {
-      name: 'Dr. Olusegun Adeyemi',
+      name: 'Mr Henry Dele Alake',
       position: 'Minister of Solid Minerals',
-      image: 'https://source.unsplash.com/300x300/?portrait,man',
-      bio: 'Dr. Adeyemi brings over 20 years of experience in the mining industry and public administration.',
+       image: henryImg,
+      bio: 'Mr Henry Dele Alake brings over 20 years of experience in the mining industry and public administration.',
     },
     {
       name: 'Amina Bello',
       position: 'Director of Mineral Resources',
-      image: 'https://source.unsplash.com/300x300/?portrait,woman',
+       image: henryImg,
       bio: 'Amina Bello is an expert in geological surveys and mineral exploration strategies.',
     },
     {
       name: 'Chukwudi Okonkwo',
       position: 'Head of Mining Regulations',
-      image: 'https://source.unsplash.com/300x300/?portrait,man',
+       image: henryImg,
       bio: 'Chukwudi Okonkwo oversees the implementation and enforcement of mining regulations.',
     },
     {
       name: 'Dr. Fatima Usman',
       position: 'Director of Environmental Compliance',
-      image: 'https://source.unsplash.com/300x300/?portrait,woman',
+       image: henryImg,
       bio: 'Dr. Usman leads initiatives to ensure sustainable and environmentally responsible mining practices.',
     },
     {
       name: 'Emmanuel Nwoke',
       position: 'Chief Investment Officer',
-      image: 'https://source.unsplash.com/300x300/?portrait,man',
+       image: henryImg,
       bio: 'Emmanuel Nwoke spearheads efforts to attract and facilitate investments in the solid minerals sector.',
     },
     {
       name: 'Aisha Mohammed',
       position: 'Director of Community Relations',
-      image: 'https://source.unsplash.com/300x300/?portrait,woman',
+       image: henryImg,
       bio: 'Aisha Mohammed manages relationships between mining operations and host communities.',
     },
   ];

@@ -9,6 +9,9 @@ const Invest: React.FC = () => {
     config: { duration: 1000 },
   });
 
+  // URL of the investment guide file
+  const investmentGuideURL = 'https://www.minesandsteel.gov.ng/wp-content/uploads/2023/03/Nigeria-Ministry-of-Solid-Minerals-Investment-BrochureV12.pdf'; // Update this to the correct file path
+
   return (
     <animated.div style={fadeIn} className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Invest in Nigeria's Solid Minerals Sector</h1>
@@ -47,7 +50,7 @@ const Invest: React.FC = () => {
           <li>Obtain necessary licenses and permits</li>
           <li>Conduct feasibility studies and environmental impact assessments</li>
           <li>Secure funding and partnerships</li>
-          <li>Implement your project with ongoing support fromthe Ministry</li>
+          <li>Implement your project with ongoing support from the Ministry</li>
         </ol>
       </div>
 
@@ -73,7 +76,11 @@ const Invest: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md p-6">
           <h3 className="text-xl font-bold mb-4">Investment Guide</h3>
           <p className="mb-4">Download our comprehensive guide for investors in Nigeria's solid minerals sector.</p>
-          <a href="#" className="text-green-600 hover:text-green-700 font-semibold inline-flex items-center">
+          <a
+            href={investmentGuideURL}
+            download="investment-guide.pdf"
+            className="text-green-600 hover:text-green-700 font-semibold inline-flex items-center"
+          >
             Download Guide <Download className="ml-2" />
           </a>
         </div>
