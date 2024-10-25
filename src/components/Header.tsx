@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from '../assets/logo.jpeg';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +11,15 @@ const Header: React.FC = () => {
   const toggleAboutDropdown = () => setAboutDropdownOpen(!aboutDropdownOpen);
 
   return (
-    <header className="bg-green-800 text-white">
+    <header className="bg-green-800 text-white sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold">Ministry of Solid Minerals</Link>
+        <Link to="/" className="text-2xl font-bold">
+          <img 
+            src={logo} 
+            alt="logo" 
+            className="w-20 h-20 object-contain" 
+          />
+        </Link>
         <nav className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-green-300">Home</Link>
           <div className="relative group">
@@ -42,7 +49,7 @@ const Header: React.FC = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden bg-green-800 text-white">
           <Link to="/" className="block py-2 px-4 text-sm hover:bg-green-700">Home</Link>
           <button onClick={toggleAboutDropdown} className="w-full text-left py-2 px-4 text-sm hover:bg-green-700 flex justify-between items-center">
             About <ChevronDown className="h-4 w-4" />

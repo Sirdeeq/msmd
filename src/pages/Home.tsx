@@ -6,6 +6,11 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ArrowLeft, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import miningImg from '../assets/gold mining.jpeg';
+import gold from '../assets/gold mining.jpeg';
+import iron from '../assets/iron ore.jpeg';
+import bitumen from '../assets/bitumen.jpeg';
+import limestone from '../assets/limestone1.jpeg';
+import coal from '../assets/coal2.jpeg';
 import ministerImg from '../assets/henry.jpeg'; // Add the image of the minister here
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -31,6 +36,17 @@ const Home: React.FC = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
+  };
+
+  // Settings for the mineral names carousel
+  const mineralsSliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Number of visible mineral names at once
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
 
   useEffect(() => {
@@ -89,6 +105,7 @@ const Home: React.FC = () => {
     );
   }
 
+
   return (
     <animated.div style={fadeIn}>
     {/* Hero Section */}
@@ -99,7 +116,8 @@ const Home: React.FC = () => {
         muted
         className="w-full h-screen object-cover"
       >
-        <source src="/home.mp4" type="video/mp4" />
+        <source src="/hero.mp4" type="video/mp4" />
+        {/* <source src="/home.mp4" type="video/mp4" /> */}
         Your browser does not support the video tag.
       </video>
 
@@ -113,6 +131,56 @@ const Home: React.FC = () => {
         </div>
       </div>
     </div>
+
+    {/* Mineral Names Carousel */ }
+<div className="py-8 bg-gray-100">
+  <div className="container mx-auto">
+    <h2 className="text-3xl font-bold mb-6 text-center">Discover Nigeria's Rich Minerals</h2>
+    <Slider {...mineralsSliderSettings}>
+      {[
+        { 
+          name: 'Gold', 
+          img: gold
+        },
+        { 
+          name: 'Iron Ore', 
+          img: iron
+        },
+        { 
+          name: 'Limestone', 
+          img:limestone
+        },
+        { 
+          name: 'Bitumen', 
+          img: bitumen 
+        },
+        { 
+          name: 'Coal', 
+          img: coal 
+        }
+      ].map((mineral, index) => (
+        <div key={index} className="px-2">
+          <div
+            className="relative bg-white rounded-lg shadow-md text-center overflow-hidden"
+            style={{ height: '200px' }}
+          >
+            <img
+              src={mineral.img}
+              alt={mineral.name}
+              className="w-full h-full object-cover"
+            />
+            {/* Overlay for text */}
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+              <h3 className="text-xl font-semibold text-white">{mineral.name}</h3>
+            </div>
+          </div>
+        </div>
+      ))}
+    </Slider>
+  </div>
+</div>
+
+
 
     {/* Mission & Vision Section */}
     <div id="main-content" className="container mx-auto px-4 py-16">
